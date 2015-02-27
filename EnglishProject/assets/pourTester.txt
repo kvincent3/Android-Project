@@ -1,0 +1,22 @@
+id:0
+q:How old are you ?
+r:15 years
+r:16 years
+ind:voici une indication 1
+===
+id:1
+q:How old are you version2?
+r:25 years
+ind:voilà mon indication fonctionne bien pour l'id demandé c'est à dire l'id 1
+===
+id:2
+q:How old are you version2?
+r:25 years
+r:56 years
+ind:voici une indication 3
+===
+id:3
+q:How old are you version2?
+r:25 years
+ind:voici une indication 3
+===
