@@ -1,0 +1,50 @@
+﻿Memo pour la mise en place de la carte:
+
+Références :
+
+	Tutos :
+	http://www.vogella.com/tutorials/AndroidGoogleMaps/article.html
+	https://developers.google.com/maps/documentation/android/v1/hello-mapview
+
+	Systeme de clé propre à l'applciation pour pouvoir afficher la carte
+	https://developers.google.com/maps/documentation/android/start#get_an_android_certificate_and_the_google_maps_api_key
+
+	Principe d'ajout d'une librairie (BuildPath)
+	http://developer.android.com/tools/projects/projects-eclipse.html#ReferencingLibraryProject
+
+	Références d'erreurs majeures 
+	https://ddewaele.github.io/GoogleMapsV2WithActionBarSherlock/part6
+
+Structure du projet :
+
+Le workspace contient chez moi :
+	1)appcompat_v7
+	2)google-play-services.llib
+	3)HelloGoogleMap
+	
+	-> 1 et 2 sont importés dans le workspace :
+		new -> Android project from existing code -> Browse (trouver la librairie* dans le sdk)
+		*qui contient tout ce qui constitue un project android (src|lib|res|etc...)
+		
+	-> 3 : notre joli petit code
+	
+Le BuildPath du "joli petit code" :
+	dans l'ordre : 	'google-play-services'
+					'HelloGoogleMap/gen'
+					'HelloGoogleMap/src'
+					'Android 5.0.1'
+					'Android Private...'
+					'Android Dependencies'
+
+La clé de al carte dont je t'ai parlé par téléphone :
+	sous eclipse : 
+		va dans : Window-> pref. -> Android -> Build
+		La clé est la valeur du champ SHA1 fingerprint
+	Tu devras la modifier dans le manifest
+
+
+	
+	
+	
+
+
