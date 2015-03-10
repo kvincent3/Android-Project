@@ -1,8 +1,15 @@
-En gros suis le tuto :-) :
+﻿En gros suis le tuto :-) :
        http://www.tutos-android.com/introduction-a-google-map-v2
 
 
 Mais lorsque tu vas créer le projet donne lui même nom que le nom de ton projet android
+
+Pour mettre a jour l'émulateur :
+Télécharger ces deux fichiers :
+	com.android.vending-1.apk	: http://www.filedropper.com/comandroidvending-1
+	com.google.android.gms-1.apk	: http://www.filedropper.com/comgoogleandroidgms-1
+
+Les installer via ADB install command
 
 
 
