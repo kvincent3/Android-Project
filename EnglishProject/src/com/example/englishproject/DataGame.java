@@ -6,6 +6,7 @@ public class DataGame {
 int id;
 String question ;
 ArrayList<String> reponse = new ArrayList<String>();
+String ville;
 String indication;
 
 public String getQuestion()
@@ -21,6 +22,16 @@ public int getId()
 public String getIndication()
 {
 	return this.indication;
+}
+
+public String getVille()
+{
+	return this.ville;
+}
+
+public void setVille(String ville)
+{
+	this.ville=ville;
 }
 public void setIndication(String a)
 {

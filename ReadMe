@@ -1,16 +1,37 @@
-﻿En gros suis le tuto :-) :
-       http://www.tutos-android.com/introduction-a-google-map-v2
+Bon alors je vais essayer d'expliquer ce que j'ai fais du mieux que je peux.
 
+En gros j'ai implémenté les markers sur la map et tout est dynamique (elle n'est pas belle la vie :-) !) 
+et j'ai pensé à toi qui voulait plutot mettre les markers sur les différentes zones de UK.
 
-Mais lorsque tu vas créer le projet donne lui même nom que le nom de ton projet android
+du poit de vue des classes que j'ai rajouté :
 
-Pour mettre a jour l'émulateur :
-Télécharger ces deux fichiers :
-	com.android.vending-1.apk	: http://www.filedropper.com/comandroidvending-1
-	com.google.android.gms-1.apk	: http://www.filedropper.com/comgoogleandroidgms-1
+ViewMap -> tous les markers et il connait son modèle ModelMap
 
-Les installer via ADB install command
+ModelMap -> lit le fichier mapdata.txt
 
+Alors regarde le fichier pourTester.txt on charge un plateau.
+Ce plateau contient un "p:lon" pour dire que l'on veut que la carte soit sur london
+la classe ModelMap va lire le fichier mapdata.txt jusqu'à trouver p:lon lorsqu'il a trouvé il charge tous les markers
+associés au plateau. alors on a :
 
+p -> plateau dans l'exemple commité plateau=london
+m -> markers ensuite marker se décompose -> latitue,lonitude,titre(associé au marker),texte sous le marker, image (doit être dans le dossier asset)  
+ATTENTION : je n'ai pas gérer les exéptions une erreur sur cette ligne et c'est foutu ca ne marchera pas notemment pour l'image qui n'ai pas trouvé
+on peut avoir autant de marker que l'on souhaite
+z -> zoom de la carte plus le zoom est éloigné et plus tu auras une vue d'ensemble (t'as vu j'ai pensé à toi )
+c -> les coordonnées de la ville sur laquelle on centre a carte
+
+Ainsi le code est dynamique on peut mettre autant de marker que l'on souhaite mais il faut faire attention à ce que dans le fichier map p doit être unique si non il chargera le dernier p
+
+Maintenant il ne reste plus grand chose :
+
+   - associé au marker un évènement au click pour lorsque l'utilisateur clique sur la réponse et lui dire si la réponse est correct ou pas
+   - rajoute menu pause
+   - faire défiler le temps
+   - l'incrémentation des points
+   - passer d'un plateau à un autre lorsqu'il a fini
+   - les informations que l'on va mettre , les images pour les markers 
+
+Enjoy !
 
   

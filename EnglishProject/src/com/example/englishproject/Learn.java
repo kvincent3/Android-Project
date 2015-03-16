@@ -88,6 +88,10 @@ public class Learn
 	  {
 		  this.datagame.setIndication(parts[1]);
 	  }
+	  else if (parts[0].equals("p"))
+	  {
+		  this.datagame.setVille(parts[1]);
+	  }
   }
   
   public DataGame GiveMeDataGame(int id)
