@@ -65,10 +65,6 @@ public class MainActivity extends Activity {
 		 * Ajouter un reponsechecker --> voir si la reponse cochée est bien celle attendue
 		 */
 		
-		
-		
-
-
-}
 	}
+}
 

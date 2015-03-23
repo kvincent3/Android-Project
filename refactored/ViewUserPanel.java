@@ -12,12 +12,17 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 public class ViewUserPanel 
 {
 	Context context;
 	Question q; // Notre modele pour generer la vue
+	//il faudrait qu'on puisse interagir avec un modèle distant (externe)
+	//--> Savoir si la réponse ets juste pour passer à la réponse suivante, etc...
+	boolean valid;
+	
 	
 	View view;
 	ViewSwitcher  myViewToSwitch;
@@ -72,11 +77,7 @@ public class ViewUserPanel
 		      public void onClick(View vue) 
 		      {
 		    	  Log.d("Check ", "Checkem");
-		    	  if (check_validity()) {
-		    		  Log.d("Validation : ", "Correct !!!!");		    		  
-		    	  }else{
-		    		  Log.d("Validation : ", "FAILED !!!!");
-		    	  }		    	  
+		    	  check_validity();    	  
 		      }
 		 });
 		 
@@ -120,7 +121,7 @@ public class ViewUserPanel
 		this.indicationTextView.setText(a.getIndication());
 	}
 	
-	public boolean check_validity(){
+	public void check_validity(){
 		
 		String correct = this.q.getCorrect();
 		int i = 0;
@@ -131,16 +132,22 @@ public class ViewUserPanel
 			//System.out.println("radio button : "+this.radioButtonlist.get(i).getText());
 			//System.out.println("correct : "+correct);			
 			if (this.radioButtonlist.get(i).isChecked()){				
-				//System.out.println("radio button activated : "+i+" "+ " "+this.radioButtonlist.get(i).getText());
-				if (this.radioButtonlist.get(i).getText().equals(correct) ){
-					return true;					
-				}else{
-					return false;
-				}				
+				//System.out.println("radio button activated : "+i+" "+ " "+this.radioButtonlist.get(i).getText());				
+				this.valid = this.radioButtonlist.get(i).getText().equals(correct);								
 			}			
 			i++;
-		}		
-		return false;
+		}
+		
+		this.indicationTextView=new TextView(this.context);
+		if (this.valid){			
+			Toast.makeText(this.context, 
+                    "Correct ! ", Toast.LENGTH_SHORT).show();		
+		}else{			
+			Toast.makeText(this.context, 
+                    "Wrong ! ", Toast.LENGTH_SHORT).show();		
+		}
+			
+		
 	}
 
 }
