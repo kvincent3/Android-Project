@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"  >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/myLinear"
+                android:layout_width="match_parent"
+                android:layout_height="52dp" >
+
+                <TextView
+                    android:id="@+id/delai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="délai"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="question"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="pts"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </LinearLayout>            
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                
+                <!--  class="com.google.android.gms.maps.MapFragment"  -->
+                <fragment
+                    android:id="@+id/map"
+				    android:name="com.google.android.gms.maps.MapFragment"
+				    android:layout_width="wrap_content"
+				    android:layout_height="308dp"   />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:id="@+id/myframe"
+                android:layout_height="300dp" >
+                
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

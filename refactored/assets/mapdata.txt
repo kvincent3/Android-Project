@@ -1,0 +1,6 @@
+p:london
+m:51.504522,-0.171704,memorial,the monument of princess diana,princ.png
+m:51.502599,-0.149388,achille,the statue of achille,ach.png
+z:12
+c:51.5085300,-0.1257400
+===
