@@ -17,6 +17,7 @@ import android.widget.ViewSwitcher;
 public class ViewUserPanel 
 {
 	Context context;
+	Question q; // Notre modele pour generer la vue
 	
 	View view;
 	ViewSwitcher  myViewToSwitch;
@@ -27,13 +28,14 @@ public class ViewUserPanel
 	
 	Button hint, quizz, check;
     
-	ArrayList<RadioButton> radioButtonlist =new ArrayList<RadioButton> ();
+	ArrayList<RadioButton> radioButtonlist = new ArrayList<RadioButton> ();
 	TextView indicationTextView;
 	
-	public ViewUserPanel(View v,Context c)
+	public ViewUserPanel(View v, Context c, Question q)
 	{
 		 this.view=v;
 		 this.context=c;
+		 this.q = q;
 		 
 		 this.insertIntoMainLayout();
 		 
@@ -49,10 +51,8 @@ public class ViewUserPanel
 		      @Override
 		      public void onClick(View vue) 
 		      {
-
 		    	  Log.d("Indication ", "Checkem");
 		    	  myViewToSwitch.showNext();
-
 		      }
 		 });
 		 
@@ -71,9 +71,12 @@ public class ViewUserPanel
 		      @Override
 		      public void onClick(View vue) 
 		      {
-		    	  System.out.println("Checked !");
 		    	  Log.d("Check ", "Checkem");
-
+		    	  if (check_validity()) {
+		    		  Log.d("Validation : ", "Correct !!!!");		    		  
+		    	  }else{
+		    		  Log.d("Validation : ", "FAILED !!!!");
+		    	  }		    	  
 		      }
 		 });
 		 
@@ -115,9 +118,29 @@ public class ViewUserPanel
 		this.indicationTextView=new TextView(this.context);
 		this.indicationTextView= (TextView) this.view.findViewById(R.id.MyindicationText);
 		this.indicationTextView.setText(a.getIndication());
+	}
+	
+	public boolean check_validity(){
 		
+		String correct = this.q.getCorrect();
+		int i = 0;
 		
-		
+		while(i<this.radioButtonlist.size()){
+			
+			//System.out.println("valeurs à tester : ");
+			//System.out.println("radio button : "+this.radioButtonlist.get(i).getText());
+			//System.out.println("correct : "+correct);			
+			if (this.radioButtonlist.get(i).isChecked()){				
+				//System.out.println("radio button activated : "+i+" "+ " "+this.radioButtonlist.get(i).getText());
+				if (this.radioButtonlist.get(i).getText().equals(correct) ){
+					return true;					
+				}else{
+					return false;
+				}				
+			}			
+			i++;
+		}		
+		return false;
 	}
 
 }

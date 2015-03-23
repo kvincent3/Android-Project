@@ -36,6 +36,8 @@ public class MainActivity extends Activity {
 		
 		
 		Question courant = mytestlearn.GiveMeDataGame(0);
+		System.out.println(courant.toString());
+		
 		ModelBar upBar = new ModelBar(30,courant.getQuestion(),0);
 		
 		//generate an instance of current hints and answers in order to display them
@@ -48,8 +50,9 @@ public class MainActivity extends Activity {
 		ViewMap relativeMap = new ViewMap(this, map, mytestlearn.getRelativeMap());
 		
 		if (courant.getChoices().size()>1){			
-	          ViewUserPanel userView=new ViewUserPanel(this.view, this);	          
-	          userView.InitializeRadio(userPanel);
+			
+	        ViewUserPanel userView=new ViewUserPanel(this.view, this, courant); //On passe le modele à al vue : la question	          
+	        userView.InitializeRadio(userPanel);
 		}
 		else{
 			 new ViewIndicationMap(this.view, this);

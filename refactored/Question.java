@@ -55,19 +55,22 @@ public class Question {
 		this.hints.add(hint);
 	}
 
-	@Override
-	public String toString() {
-		return "Question [id=" + id + ", question=" + question + ", choice="
-				+ choices + ", hints=" + hints + "]";
+
+	public void setCorrect(String correct) {
+		this.correct = correct;
 	}
 
 	public String getCorrect() {
 		return correct;
 	}
 
-	public void setCorrect(String correct) {
-		this.correct = correct;
+	@Override
+	public String toString() {
+		return "Question [id=" + id + ", question=" + question + ", correct="
+				+ correct + ", choices=" + choices + ", hints=" + hints + "]";
 	}
+
+
 	
 	
 }
