@@ -3,11 +3,11 @@ package com.example.englishproject;
 import java.util.ArrayList;
 
 public class DataGame {
-int id;
-String question ;
-ArrayList<String> reponse = new ArrayList<String>();
-String ville;
-String indication;
+	int id;
+	String question ;
+	ArrayList<String> reponse = new ArrayList<String>();
+	String ville;
+	String indication;
 
 public String getQuestion()
 {

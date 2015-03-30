@@ -1,9 +1,5 @@
 package com.example.englishproject;
 
-import android.content.Context;
-import android.view.View;
-
-
 public class ModelBar 
 {
   private int delai;
@@ -14,7 +10,7 @@ public class ModelBar
   
   public ModelBar(int del,String quest,int pts )
   {
-	  this.delai= del;
+	  this.delai= del; 
 	  this.question= quest;
 	  this.points= pts;
   }
