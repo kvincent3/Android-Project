@@ -16,7 +16,7 @@ c:Roger Moore
 c:Spartacus
 ans:Claude
 ind:He was a Roman emperor
-p:English channel
+p:English Channel2
 ===
 id:3
 q:When was build Hadrien's wall ?
