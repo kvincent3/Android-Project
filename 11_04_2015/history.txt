@@ -52,9 +52,9 @@ id:6
 q:Who did participate to the 3rd Croisade ?
 c:William the conqueror
 c:Sean Connery
-c:Richar the Lionheart
+c:Richard the Lionheart
 c:Stannis Baratheon
-ans:He fighted like a wild animal
+ans:Richard the Lionheart
 ind:Robin Hood lived during his reign
 p:Britain
 ===
