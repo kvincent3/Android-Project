@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewSwitcher1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginBottom="5dp" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="141dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.20"
+                android:layout_marginLeft="3dp"
+                android:background="@drawable/effect3d"
+                android:src="@drawable/ic_launcher" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/effect3d"
+                android:layout_weight="0.34"
+                android:orientation="vertical" >
+
+                <RadioGroup
+                    android:id="@+id/radioGroup1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="left"
+                    android:layout_marginTop="50dp" >
+
+                    <RadioButton
+                        android:id="@+id/radio0"
+                        android:buttonTint="@color/Sienna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        android:buttonTint="@color/Sienna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/radio2"
+                        android:buttonTint="@color/Sienna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/radio3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/Sienna"
+                        android:text="RadioButton" />
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp" >
+
+                <Button
+                    android:id="@+id/indication"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="50dp"
+                    android:background="@drawable/customize_button"
+                    android:text="indication"
+                    android:textColor="@color/WhiteSmoke" />
+
+                <Button
+                    android:id="@+id/check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="46dp"
+                    android:background="@drawable/customize_button"
+                    android:text="check"
+                    android:textColor="@color/WhiteSmoke" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/effect3d"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/quizz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/customize_button"
+            android:textColor="@color/WhiteSmoke"
+            android:text="Back" />
+
+
+
+        <TextView
+            android:id="@+id/MyindicationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Le big text d&apos;indication"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</ViewSwitcher>
