@@ -1,16 +1,16 @@
 package com.example.arnaud.englishproject;
 
 
-import java.util.ArrayList;
+
 
 import android.app.Activity;
 import android.util.Log;
-
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
@@ -19,11 +19,21 @@ public class ViewMap
 {
     private Middleman middleman;
     private GoogleMap map;
+
+
     //instanciate a specific view on a specific map
-    public ViewMap(Activity a, GoogleMap map,Middleman m)
+    public ViewMap(Activity a, Middleman m)
     {
         this.middleman=m;
-        this.map=map;
+        this.map = ((MapFragment) a.getFragmentManager().findFragmentById(R.id.map) ).getMap();
+        this.map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+
+            @Override
+            public void onMapClick(LatLng arg0) {
+                // TODO Auto-generated method stub
+                Log.d("arg0", arg0.latitude + "-" + arg0.longitude);
+            }
+        });
         InitialiseMap(a);
 
     }
@@ -33,7 +43,6 @@ public class ViewMap
     //ie : if city in the current one etc...
     public void InitialiseMap(Activity a)
     {
-        map = ((MapFragment) a.getFragmentManager().findFragmentById(R.id.map) ).getMap();
         Location l = this.middleman.giveMeMap( this.middleman.giveMeQuestion(0).getPlace() );
         if (map!=null){
 
@@ -85,10 +94,7 @@ public class ViewMap
                         Log.d("notifie","on notfie");
                         this.notify();
                     }
-
                 }
-
-
             }
         }
     }

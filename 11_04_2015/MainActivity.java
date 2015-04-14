@@ -1,6 +1,6 @@
 package com.example.arnaud.englishproject;
 
-import com.google.android.gms.maps.GoogleMap;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity {
     private Middleman middleman;
-    private GoogleMap map;
     private View view;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class MainActivity extends Activity {
         //Log.d("model", ""+this.middleman.getModQuestions().size()+"\n"+this.middleman.getModMap().size()+"\n"+this.middleman.getModBar().getDelai());
 
 
-        ViewMap relativeMap = new ViewMap(this, map, this.middleman);
+        ViewMap relativeMap = new ViewMap(this, this.middleman);
 
         //The header also refers to the same Model : upBar, which only needs to be refreshed from time to time
         ViewBarTop header = new ViewBarTop(this.view, this, this.middleman.getModBar());
