@@ -60,8 +60,8 @@ public class ViewUserPanel
         this.myViewToSwitch.setInAnimation(this.slide_in_left);
         this.myViewToSwitch.setOutAnimation(this.slide_out_right);
 
-        hint = (Button) v.findViewById(R.id.indication);
-        hint.setOnClickListener(new View.OnClickListener() {
+        this.hint = (Button) v.findViewById(R.id.indication);
+        this.hint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vue)
             {
@@ -71,8 +71,8 @@ public class ViewUserPanel
         });
 
 
-        quizz = (Button) this.mainView.findViewById(R.id.quizz);
-        quizz.setOnClickListener(new View.OnClickListener() {
+        this.quizz = (Button) this.mainView.findViewById(R.id.quizz);
+        this.quizz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vue)
             {
@@ -80,8 +80,8 @@ public class ViewUserPanel
             }
         });
 
-        check = (Button) this.mainView.findViewById(R.id.check);
-        check.setOnClickListener(new View.OnClickListener() {
+        this.check = (Button) this.mainView.findViewById(R.id.check);
+        this.check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vue)
             {
@@ -91,13 +91,19 @@ public class ViewUserPanel
         });
 
 
+        //Load content to the specific elements of the view
+        this.initializeRadio();
+        this.loadButton();
+        this.loadIndication();
+
+
     }
 
     public void insertIntoMainLayout()
     {
         //Inflate the Hidden Layout Information View
-        this.questionTextView = (TextView) this.mainView.findViewById(R.id.textView1);
-        this.questionTextView.setText(this.modQuestion.get(current).getQuestion());
+        this.indicationTextView=new TextView(this.context);
+        this.loadTitleQuestion();
 
         FrameLayout myFrame = (FrameLayout) mainView.findViewById(R.id.myframe);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
@@ -107,7 +113,7 @@ public class ViewUserPanel
 
     }
 
-    public void InitializeRadio()
+    public void initializeRadio()
     {
         RadioButton r0 = (RadioButton) mainView.findViewById(R.id.radio0);
         RadioButton r1 = (RadioButton) mainView.findViewById(R.id.radio1);
@@ -117,19 +123,22 @@ public class ViewUserPanel
         radioButtonlist.add(r1);
         radioButtonlist.add(r2);
         radioButtonlist.add(r3);
+    }
 
-        //Associate a response to each radio button
+    public void loadTitleQuestion(){
+        this.questionTextView = (TextView) this.mainView.findViewById(R.id.textView1);
+        this.questionTextView.setText(this.modQuestion.get(current).getQuestion());
+    }
+
+    public void loadButton(){
         for(int i=0 ; i<this.modQuestion.get(current).getChoices().size();i++)
         {
             radioButtonlist.get(i).setText(this.modQuestion.get(current).getChoices().get(i));
         }
-        /*
-        for (int i=a.getReponse().size();i<4;i++)
-        {
-            radioButtonlist.get(i).setVisibility(View.INVISIBLE);
-        }
-        */
-        this.indicationTextView=new TextView(this.context);
+    }
+
+    public void loadIndication(){
+
         this.indicationTextView= (TextView) this.mainView.findViewById(R.id.MyindicationText);
         this.indicationTextView.setText(this.modQuestion.get(current).getHints().get(0));
     }
@@ -151,9 +160,16 @@ public class ViewUserPanel
 
         //this.indicationTextView = new TextView(this.context);
         if (correct){
-            this.current++;
+
+            if (this.current++ < this.modQuestion.size()){
+                this.refreshPage();
+            }else{
+                Log.d("VIEW", "A court de question : "+this.current+" VS "+this.modQuestion.size());
+            }
+
             Toast.makeText(this.context,
                     "Correct ! ", Toast.LENGTH_SHORT).show();
+            this.modQuestion.get(current).setPassed(true);
             //switch to the new question
         }else{
             Toast.makeText(this.context,
@@ -162,6 +178,12 @@ public class ViewUserPanel
     }
 
     public void refreshPage(){
+        this.loadTitleQuestion();
+        this.loadButton();
+        this.loadIndication();
+        synchronized (this){
+            this.notify();
+        }
 
     }
 

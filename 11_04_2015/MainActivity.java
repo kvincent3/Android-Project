@@ -40,7 +40,6 @@ public class MainActivity extends Activity {
 
         //The userView refers to a specific question only for now
         ViewUserPanel userView = new ViewUserPanel(this.view, this, this.middleman.getModQuestions());
-        userView.InitializeRadio();
 
 
         /*
