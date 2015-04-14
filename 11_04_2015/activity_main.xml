@@ -30,6 +30,12 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_gravity="left" />
 
+        <!--
+        Insertion d'un textView, dont le drawableCenter va prendre une image particuliere
+        Soit un 'check' pour un quizz
+        Soit un 'GROS DOIGT' pour toucher la map
+        -->
+
         <TextView
             android:id="@+id/points"
             android:layout_width="wrap_content"
