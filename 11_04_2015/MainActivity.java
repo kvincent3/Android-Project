@@ -1,4 +1,4 @@
-package com.example.arnaud.englishproject;
+package com.example.englishproject;
 
 import com.google.android.gms.maps.GoogleMap;
 import android.app.Activity;
@@ -31,17 +31,17 @@ public class MainActivity extends Activity {
         //ViewMap is related to the location of the question, which links to the MapsModel
         //So it refers only one particular question of the model Map
         //Instanciate a location based on the place of the question at index 0
-        Location loc = this.middleman.giveMeMap( this.middleman.giveMeQuestion(0).getPlace() );
-        ViewMap relativeMap = new ViewMap(this, map, loc);
+        ViewMap relativeMap = new ViewMap(this, map,this.middleman);
 
         //The header also refers to the same Model : upBar, which only needs to be refreshed from time to time
         ViewBarTop header = new ViewBarTop(this.view, this, this.middleman.getModBar());
         header.InitializeTextView();
 
         //The userView refers to a specific question only for now
+        //ViewUserPanel userView = new ViewUserPanel(this.view, this, this.middleman.getModQuestions());
         ViewUserPanel userView = new ViewUserPanel(this.view, this, this.middleman.getModQuestions());
-
-
+        
+        MiddleView middleview = new MiddleView(this, userView, relativeMap);
         /*
         //set up the activity
         courant = mytestlearn.GiveMeDataGame(0);

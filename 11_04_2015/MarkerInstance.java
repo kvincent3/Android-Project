@@ -1,4 +1,4 @@
-package com.example.arnaud.englishproject;
+package com.example.englishproject;
 
 import java.util.ArrayList;
 
