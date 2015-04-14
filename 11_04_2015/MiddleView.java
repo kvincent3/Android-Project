@@ -14,14 +14,18 @@ public class MiddleView
 	public MiddleView (Activity a,ViewUserPanel v,ViewMap vi)
 	{
 		this.viewUserPanel = v;
-		this.viewMap=vi;
+		this.viewMap = vi;
+        this.viewMap.setToTouch(true);
         this.check = (Button) a.findViewById(R.id.check);
         this.check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vue)
             {
                 Log.d("Check ", "Checkem");
-                if (viewUserPanel.check_validity())
+                if (viewMap.getToTouch()){
+                    viewMap.checkAccurancy();
+
+                }else if (viewUserPanel.check_validity())
                 {
                     viewUserPanel.refreshUser();
                     viewMap.refreshMap();

@@ -24,7 +24,7 @@ public class Middleman {
     private ArrayList<Question> modQuestions = new ArrayList<Question>();
     private ArrayList<Location> modMap = new ArrayList<Location>();
     private ModelBar modBar;
-    private String NewPlace;
+    private String newPlace;
     public boolean mustRefresh;
 
 
@@ -203,8 +203,8 @@ public class Middleman {
         {
             test=true;
             this.mustRefresh=true;
-            this.NewPlace = this.getModQuestions().get(place_last_true+1).getPlace().toLowerCase();
-            Log.d("test5",this.NewPlace);
+            this.newPlace = this.getModQuestions().get(place_last_true+1).getPlace().toLowerCase();
+            Log.d("test5",this.newPlace);
         }
         Log.d("test",""+test);
         return test;
@@ -216,9 +216,26 @@ public class Middleman {
         Location l = new Location();
         for (int j=0;j<this.modMap.size();j++)
         {
-            Log.d("eng",this.NewPlace);
+            Log.d("eng",this.newPlace);
             Log.d("boucle",this.modMap.get(j).getName());
-            if (this.modMap.get(j).getName().toLowerCase().equals(this.NewPlace))
+            if (this.modMap.get(j).getName().toLowerCase().equals(this.newPlace))
+            {
+                l = this.modMap.get(j);
+            }
+        }
+        return l;
+    }
+
+    public Location getLocationFromPlace(String place)
+    {
+        this.newPlace = place;
+
+        Location l = new Location();
+        for (int j=0;j<this.modMap.size();j++)
+        {
+            Log.d("eng",this.newPlace);
+            Log.d("boucle",this.modMap.get(j).getName());
+            if (this.modMap.get(j).getName().equals(this.newPlace))
             {
                 l = this.modMap.get(j);
             }

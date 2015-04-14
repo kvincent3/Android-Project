@@ -19,33 +19,35 @@ public class ViewMap
 {
     private Middleman middleman;
     private GoogleMap map;
+    private Boolean toTouch = false;
+    private LatLng touched = new LatLng(0, 0);
 
 
     //instanciate a specific view on a specific map
     public ViewMap(Activity a, Middleman m)
     {
-        this.middleman=m;
+        this.middleman = m;
         this.map = ((MapFragment) a.getFragmentManager().findFragmentById(R.id.map) ).getMap();
-        this.map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
 
+        this.map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng arg0) {
                 // TODO Auto-generated method stub
-                Log.d("arg0", arg0.latitude + "-" + arg0.longitude);
+                Log.d("Touched!", arg0.latitude + "-" + arg0.longitude);
+
+                touched = arg0;
             }
         });
-        InitialiseMap(a);
 
+        InitialiseMap();
     }
 
-    //Initialize the map relative to the exercise
-    //So many tests disappear...
-    //ie : if city in the current one etc...
-    public void InitialiseMap(Activity a)
+
+    public void InitialiseMap()
     {
         Location l = this.middleman.giveMeMap( this.middleman.giveMeQuestion(0).getPlace() );
-        if (map!=null){
 
+        if (map!=null){
             CameraUpdate center = CameraUpdateFactory.newLatLng(l.getGps());
             CameraUpdate zoom = CameraUpdateFactory.zoomTo(l.getZoom());
             map.moveCamera(center);
@@ -59,6 +61,7 @@ public class ViewMap
                         .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
             }
         }
+
     }
 
     /*
@@ -70,6 +73,7 @@ public class ViewMap
         if (map!=null && this.middleman.comparePlaces())
         {
             Location l = this.middleman.getAppropriateLocation();
+
             CameraUpdate center;
             CameraUpdate zoom;
             if (l.getGps() != null)
@@ -98,7 +102,18 @@ public class ViewMap
             }
         }
     }
-    /*
-    We should add a refreshMap
-     */
+
+    public void checkAccurancy(){
+        String place = this.middleman.giveMeQuestion(0).getPlace();
+        Log.d("ACC", touched.latitude + "-" + touched.longitude+" VS "+ this.middleman.getLocationFromPlace(place).getGps());
+    }
+
+
+    public Boolean getToTouch() {
+        return toTouch;
+    }
+
+    public void setToTouch(Boolean toTouch) {
+        this.toTouch = toTouch;
+    }
 }

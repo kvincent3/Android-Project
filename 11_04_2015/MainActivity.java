@@ -21,7 +21,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //Set up the model appropriate to the specific typesend by home.java
-        this.middleman = new Middleman(this, "history.txt", "mapdata.txt");
+        this.middleman = new Middleman(this, "touch.txt", "mapdata.txt");
+        //this.middleman = new Middleman(this, "history.txt", "mapdata.txt");
         //Log.d("model", ""+this.middleman.getModQuestions().size()+"\n"+this.middleman.getModMap().size()+"\n"+this.middleman.getModBar().getDelai());
 
 
