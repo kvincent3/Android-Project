@@ -15,43 +15,38 @@
         android:layout_height="52dp" >
 
         <TextView
-            android:id="@+id/delai"
+            android:id="@+id/logoTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/timer"
-            android:text="délai"
-            android:paddingRight="8dp"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="4dp"
-            android:background="@color/BurlyWood"
-            />
+            android:drawableLeft="@drawable/timer" />
 
         <TextView
-            android:id="@+id/question"
+            android:id="@+id/delay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/point"
-            android:text="question"
-            android:paddingRight="15dp"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="4dp"
-            android:background="@color/BurlyWood" />
+            android:layout_weight="1"
+            android:text="délai"
+            android:paddingLeft="15dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left" />
 
         <TextView
             android:id="@+id/points"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/add"
+            android:layout_weight="1"
             android:text="pts"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:paddingRight="15dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="right|end"
+            android:gravity="right" />
+
+        <TextView
+            android:id="@+id/logoPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/add" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -69,9 +64,6 @@
 
             />
 
-
-
-
         <ScrollView
             android:id="@+id/scrollView1"
             android:layout_width="match_parent"
@@ -79,7 +71,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
                 <TextView
@@ -90,12 +82,13 @@
                     android:layout_marginTop="4dp"
                     android:drawableLeft="@drawable/uk"
                     android:drawableRight="@drawable/uk"
-                    android:padding="1dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
+                    android:padding="5dp"
                     android:background="@drawable/effect3d"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/DarkRed" />
+                    android:textColor="@color/DarkRed"
+                    android:textAlignment="center"
+                    android:minLines="1"
+                    android:gravity="center" />
 
 
 

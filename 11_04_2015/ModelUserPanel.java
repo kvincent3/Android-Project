@@ -1,4 +1,4 @@
-package com.example.englishproject;
+package com.example.arnaud.englishproject;
 //Totally useless
         import java.util.ArrayList;
 

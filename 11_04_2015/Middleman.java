@@ -1,4 +1,4 @@
-package com.example.englishproject;
+package com.example.arnaud.englishproject;
 
 import android.content.Context;
 import android.util.Log;
@@ -26,6 +26,7 @@ public class Middleman {
     private ModelBar modBar;
     private String NewPlace;
     public boolean mustRefresh;
+
 
     public Middleman(Context c, String fileOfQuestions, String fileOfLocations){
         this.c = c;
@@ -93,63 +94,6 @@ public class Middleman {
         }
     }
 
-    public Location getAppropriateLocation()
-    {
-    	Location l = new Location();
-    		for (int j=0;j<this.modMap.size();j++)
-    		{
-    			Log.d("eng",this.NewPlace);
-    			Log.d("boucle",this.modMap.get(j).getName());
-    			if (this.modMap.get(j).getName().equals(this.NewPlace))
-    			{
-    				l= this.modMap.get(j); 
-    			}
-    		}
-    	return l;
-    }
-    
-    
-    
-    //si pas les mêmes renvoie true si non false
-    public boolean ComparePlaces()
-    {
-	    	int place_last_true=0;
-	    	boolean test=false;
-	     	//Log.d("test5","on compare"); 
-	    	for (int i=0;i<this.getModQuestions().size();i++)
-	    	{
-		        Log.d("placetest"+i,this.getModQuestions().get(i).getPassed()+"");
-
-	    	}
-	    	for (int i=0;i<this.getModQuestions().size();i++)
-	    	{
-	    		
-	    		if (this.getModQuestions().get(i).getPassed())
-	    		{
-	    			place_last_true=i;
-	    		}
-	    		else
-	    		{
-	    			break; 
-	    		}
-	    	}
-	        Log.d("placetest",place_last_true+"");
-    		if(this.getModQuestions().get(place_last_true).getPlace().equals(this.getModQuestions().get(place_last_true+1).getPlace()))
-    		{
-    		    test=false;
-    		    this.mustRefresh=false;
-    		}
-    		else
-    		{
-    			test=true;
-    			this.mustRefresh=true;
-    			this.NewPlace=this.getModQuestions().get(place_last_true+1).getPlace();
-    			Log.d("test5",this.NewPlace);
-    		}
-    	Log.d("test",""+test);
-    	return test;
-    	
-    }
     /*
     Extract Locations
      */
@@ -200,7 +144,7 @@ public class Middleman {
 
     }
 
-    
+
     /*
     Appropriate functions
      */
@@ -215,12 +159,68 @@ public class Middleman {
 
     public Location giveMeMap(String place) {
         for (int i = 0; i < this.modMap.size(); i++) {
-            if (this.modMap.get(i).getName().equals(place))
-            {
+            if (this.modMap.get(i).getName().equals(place)) {
                 return this.modMap.get(i);
             }
         }
         return null;
+    }
+
+
+    //si pas les mêmes renvoie true si non false
+    public boolean comparePlaces()
+    {
+        int place_last_true=0;
+        boolean test=false;
+        //Log.d("test5","on compare");
+        for (int i=0;i<this.getModQuestions().size();i++)
+        {
+            Log.d("placetest"+i,this.getModQuestions().get(i).getPassed()+"");
+
+        }
+        for (int i=0;i<this.getModQuestions().size();i++)
+        {
+
+            if (this.getModQuestions().get(i).getPassed())
+            {
+                place_last_true=i;
+            }
+            else
+            {
+                break;
+            }
+        }
+        Log.d("placetest",place_last_true+"");
+        if(this.getModQuestions().get(place_last_true).getPlace().equals(this.getModQuestions().get(place_last_true+1).getPlace()))
+        {
+            test=false;
+            this.mustRefresh=false;
+        }
+        else
+        {
+            test=true;
+            this.mustRefresh=true;
+            this.NewPlace=this.getModQuestions().get(place_last_true+1).getPlace();
+            Log.d("test5",this.NewPlace);
+        }
+        Log.d("test",""+test);
+        return test;
+
+    }
+
+    public Location getAppropriateLocation()
+    {
+        Location l = new Location();
+        for (int j=0;j<this.modMap.size();j++)
+        {
+            Log.d("eng",this.NewPlace);
+            Log.d("boucle",this.modMap.get(j).getName());
+            if (this.modMap.get(j).getName().equals(this.NewPlace))
+            {
+                l= this.modMap.get(j);
+            }
+        }
+        return l;
     }
 
 
@@ -261,7 +261,6 @@ public class Middleman {
     public void setModBar(ModelBar modBar) {
         this.modBar = modBar;
     }
-    
 
     @Override
     public String toString() {

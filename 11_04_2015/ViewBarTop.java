@@ -1,4 +1,4 @@
-package com.example.englishproject;
+package com.example.arnaud.englishproject;
 
 
 
@@ -11,32 +11,36 @@ import android.widget.TextView;
 
 public class ViewBarTop
 {
-    LinearLayout layout;
-    Animation animation;
-    TextView delai;
-    TextView question;
-    TextView points;
-    ModelBar model;
-    View v;
+
+    private Animation animation;
+    private LinearLayout layout;
+    private TextView delai, points;
+
+    private ModelBar model;
+    private View mainView;
+
     public ViewBarTop(View v,Context context,ModelBar m)
     {
-        this.v=v;
+        this.mainView=v;
         this.model=m;
 
         this.layout= (LinearLayout) v.findViewById(R.id.myLinear);
         this.animation = AnimationUtils.loadAnimation(context, R.anim.bartopanimation);
         this.layout.startAnimation(this.animation);
 
+        this.initialize();
     }
 
-    public void InitializeTextView()
+    public void initialize()
     {
-        this.delai= (TextView) v.findViewById(R.id.delai);
+        this.delai = (TextView) mainView.findViewById(R.id.delay);
         this.delai.setText(""+this.model.getDelai());
-        this.question= (TextView) v.findViewById(R.id.question);
-        this.question.setText(""+this.model.getQuestion());
-        this.points= (TextView) v.findViewById(R.id.points);
+        this.points = (TextView) mainView.findViewById(R.id.points);
         this.points.setText(""+this.model.getPoints());
+    }
+
+    public void refresh(){
+
     }
 
     public TextView getDelai()
@@ -44,10 +48,6 @@ public class ViewBarTop
         return this.delai;
     }
 
-    public TextView getQuestion()
-    {
-        return this.question;
-    }
 
     public TextView getPoints()
     {
@@ -59,10 +59,7 @@ public class ViewBarTop
         this.delai=newdel;
     }
 
-    public void setQuestion(TextView newquest)
-    {
-        this.question=newquest;
-    }
+
 
     public void setPoints(TextView newPoints)
     {

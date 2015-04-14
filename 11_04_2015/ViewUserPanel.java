@@ -1,5 +1,4 @@
-package com.example.englishproject;
-
+package com.example.arnaud.englishproject;
 
 
 import java.util.ArrayList;
@@ -152,24 +151,24 @@ public class ViewUserPanel
 
         //this.indicationTextView = new TextView(this.context);
         if (correct){
-        	 this.modQuestion.get(current).setPassed(true);
+            this.modQuestion.get(current).setPassed(true);
             if (this.current+1< this.modQuestion.size())
             {
                 this.refreshPage();
                 this.current++;
             }else{
-                Log.d("VIEW", "A court de question : "+this.current+" VS "+this.modQuestion.size()); 
+                Log.d("VIEW", "A court de question : "+this.current+" VS "+this.modQuestion.size());
             }
 
             Toast.makeText(this.context,
                     "Correct ! ", Toast.LENGTH_SHORT).show();
-           
+
             //switch to the new question
         }else{
             Toast.makeText(this.context,
                     "Wrong ! ", Toast.LENGTH_SHORT).show();
         }
-        
+
         return correct;
     }
 

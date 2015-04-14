@@ -1,4 +1,4 @@
-package com.example.englishproject;
+package com.example.arnaud.englishproject;
 
 import android.app.Activity;
 import android.util.Log;
@@ -7,24 +7,24 @@ import android.widget.Button;
 
 public class MiddleView 
 {
-	private ViewUserPanel viewuserpanel;
-	private ViewMap viewmap;
+	private ViewUserPanel viewUserPanel;
+	private ViewMap viewMap;
 	private Button check;
 	
 	public MiddleView (Activity a,ViewUserPanel v,ViewMap vi)
 	{
-		this.viewuserpanel=v;
-		this.viewmap=vi;
+		this.viewUserPanel = v;
+		this.viewMap=vi;
         this.check = (Button) a.findViewById(R.id.check);
         this.check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vue)
             {
                 Log.d("Check ", "Checkem");
-                if (viewuserpanel.check_validity())
+                if (viewUserPanel.check_validity())
                 {
-                	viewuserpanel.refreshPage();
-                	viewmap.Refresh();
+                    viewUserPanel.refreshPage();
+                    viewMap.Refresh();
                 }
             }
         });

@@ -1,5 +1,4 @@
-package com.example.englishproject;
-
+package com.example.arnaud.englishproject;
 
 
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class ViewMap
         this.middleman=m;
         this.map=map;
         InitialiseMap(a);
-        
+
     }
 
     //Initialize the map relative to the exercise
@@ -55,29 +54,29 @@ public class ViewMap
 
     public void Refresh()
     {
-        if (map!=null && this.middleman.ComparePlaces())
+        if (map!=null && this.middleman.comparePlaces())
         {
-        	Location l = this.middleman.getAppropriateLocation();
-        	if (l!=null)
-        	{
-	        	map.clear();
-	            CameraUpdate center = CameraUpdateFactory.newLatLng(l.getGps());
-	            CameraUpdate zoom = CameraUpdateFactory.zoomTo(l.getZoom());
-	            map.moveCamera(center);
-	            map.animateCamera(zoom);
-	            for (int j=0 ; j < l.getMarkers().size(); j++)
-	            {
-	                map.addMarker(new MarkerOptions().position(l.getMarkers().get(j).getCoor())
-	                        .title(l.getMarkers().get(j).getTitre())
-	                        .snippet(l.getMarkers().get(j).getTexte())
-	                        .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
-	            }
-	            synchronized (this)
-	            {
-	            	Log.d("notifie","on notfie");
-	                this.notify();
-	            }
-        	}
+            Location l = this.middleman.getAppropriateLocation();
+            if (l!=null)
+            {
+                map.clear();
+                CameraUpdate center = CameraUpdateFactory.newLatLng(l.getGps());
+                CameraUpdate zoom = CameraUpdateFactory.zoomTo(l.getZoom());
+                map.moveCamera(center);
+                map.animateCamera(zoom);
+                for (int j=0 ; j < l.getMarkers().size(); j++)
+                {
+                    map.addMarker(new MarkerOptions().position(l.getMarkers().get(j).getCoor())
+                            .title(l.getMarkers().get(j).getTitre())
+                            .snippet(l.getMarkers().get(j).getTexte())
+                            .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
+                }
+                synchronized (this)
+                {
+                    Log.d("notifie","on notfie");
+                    this.notify();
+                }
+            }
         }
     }
     /*
