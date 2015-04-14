@@ -1,4 +1,4 @@
-package com.example.arnaud.englishproject;
+package com.example.englishproject;
 
 
 
@@ -80,15 +80,7 @@ public class ViewUserPanel
             }
         });
 
-        this.check = (Button) this.mainView.findViewById(R.id.check);
-        this.check.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View vue)
-            {
-                Log.d("Check ", "Checkem");
-                check_validity();
-            }
-        });
+
 
 
         //Load content to the specific elements of the view
@@ -143,7 +135,7 @@ public class ViewUserPanel
         this.indicationTextView.setText(this.modQuestion.get(current).getHints().get(0));
     }
 
-    public void check_validity(){
+    public boolean check_validity(){
 
         String answer = this.modQuestion.get(current).getCorrect();
         int i = 0;
@@ -160,21 +152,25 @@ public class ViewUserPanel
 
         //this.indicationTextView = new TextView(this.context);
         if (correct){
-
-            if (this.current++ < this.modQuestion.size()){
+        	 this.modQuestion.get(current).setPassed(true);
+            if (this.current+1< this.modQuestion.size())
+            {
                 this.refreshPage();
+                this.current++;
             }else{
-                Log.d("VIEW", "A court de question : "+this.current+" VS "+this.modQuestion.size());
+                Log.d("VIEW", "A court de question : "+this.current+" VS "+this.modQuestion.size()); 
             }
 
             Toast.makeText(this.context,
                     "Correct ! ", Toast.LENGTH_SHORT).show();
-            this.modQuestion.get(current).setPassed(true);
+           
             //switch to the new question
         }else{
             Toast.makeText(this.context,
                     "Wrong ! ", Toast.LENGTH_SHORT).show();
         }
+        
+        return correct;
     }
 
     public void refreshPage(){

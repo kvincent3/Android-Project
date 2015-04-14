@@ -1,8 +1,11 @@
-package com.example.arnaud.englishproject;
+package com.example.englishproject;
 
 
+
+import java.util.ArrayList;
 
 import android.app.Activity;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -15,39 +18,68 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class ViewMap
 {
-    private Location relativeMap;
-
+    private Middleman middleman;
+    private GoogleMap map;
     //instanciate a specific view on a specific map
-    public ViewMap(Activity a, GoogleMap map, Location place){
-        this.relativeMap = place;
-        InitialiseMap(a, map);
+    public ViewMap(Activity a, GoogleMap map,Middleman m)
+    {
+        this.middleman=m;
+        this.map=map;
+        InitialiseMap(a);
+        
     }
 
     //Initialize the map relative to the exercise
     //So many tests disappear...
     //ie : if city in the current one etc...
-    public void InitialiseMap(Activity a,GoogleMap map)
+    public void InitialiseMap(Activity a)
     {
         map = ((MapFragment) a.getFragmentManager().findFragmentById(R.id.map) ).getMap();
-
+        Location l = this.middleman.giveMeMap( this.middleman.giveMeQuestion(0).getPlace() );
         if (map!=null){
 
-            CameraUpdate center = CameraUpdateFactory.newLatLng(this.relativeMap.getGps());
-            CameraUpdate zoom = CameraUpdateFactory.zoomTo(this.relativeMap.getZoom());
+            CameraUpdate center = CameraUpdateFactory.newLatLng(l.getGps());
+            CameraUpdate zoom = CameraUpdateFactory.zoomTo(l.getZoom());
             map.moveCamera(center);
             map.animateCamera(zoom);
 
-            for (int j=0 ; j < this.relativeMap.getMarkers().size(); j++)
+            for (int j=0 ; j < l.getMarkers().size(); j++)
             {
-                map.addMarker(new MarkerOptions().position(this.relativeMap.getMarkers().get(j).getCoor())
-                        .title(this.relativeMap.getMarkers().get(j).getTitre())
-                        .snippet(this.relativeMap.getMarkers().get(j).getTexte())
-                        .icon(BitmapDescriptorFactory.fromAsset(this.relativeMap.getMarkers().get(j).getImage())));
+                map.addMarker(new MarkerOptions().position(l.getMarkers().get(j).getCoor())
+                        .title(l.getMarkers().get(j).getTitre())
+                        .snippet(l.getMarkers().get(j).getTexte())
+                        .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
             }
         }
     }
 
-
+    public void Refresh()
+    {
+        if (map!=null && this.middleman.ComparePlaces())
+        {
+        	Location l = this.middleman.getAppropriateLocation();
+        	if (l!=null)
+        	{
+	        	map.clear();
+	            CameraUpdate center = CameraUpdateFactory.newLatLng(l.getGps());
+	            CameraUpdate zoom = CameraUpdateFactory.zoomTo(l.getZoom());
+	            map.moveCamera(center);
+	            map.animateCamera(zoom);
+	            for (int j=0 ; j < l.getMarkers().size(); j++)
+	            {
+	                map.addMarker(new MarkerOptions().position(l.getMarkers().get(j).getCoor())
+	                        .title(l.getMarkers().get(j).getTitre())
+	                        .snippet(l.getMarkers().get(j).getTexte())
+	                        .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
+	            }
+	            synchronized (this)
+	            {
+	            	Log.d("notifie","on notfie");
+	                this.notify();
+	            }
+        	}
+        }
+    }
     /*
     We should add a refreshMap
      */
