@@ -23,14 +23,8 @@ public class MainActivity extends Activity {
 
         //Set up the model appropriate to the specific typesend by home.java
         this.middleman = new Middleman(this, "history.txt", "mapdata.txt");
-        Log.d("model", ""+this.middleman.getModQuestions().size()+"\n"+this.middleman.getModMap().size()+"\n"+this.middleman.getModBar().getDelai());
+        //Log.d("model", ""+this.middleman.getModQuestions().size()+"\n"+this.middleman.getModMap().size()+"\n"+this.middleman.getModBar().getDelai());
 
-        //UserPanel is useless cause it only replicates data of the questions Model
-        //ModelUserPanel userPanel;
-
-        //ViewMap is related to the location of the question, which links to the MapsModel
-        //So it refers only one particular question of the model Map
-        //Instanciate a location based on the place of the question at index 0
 
         ViewMap relativeMap = new ViewMap(this, map, this.middleman);
 
@@ -39,6 +33,11 @@ public class MainActivity extends Activity {
 
         //The userView refers to a specific question only for now
         ViewUserPanel userView = new ViewUserPanel(this.view, this, this.middleman.getModQuestions());
+
+
+        //refer to the middle view;
+        //Only refering User and map for now
+        MiddleView midView = new MiddleView(this, userView, relativeMap);
 
 
 

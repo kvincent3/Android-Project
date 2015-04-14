@@ -9,7 +9,7 @@ import com.google.android.gms.maps.model.LatLng;
 public class Location {
     private String name;
     private LatLng gps;
-    private int zoom;
+    private int zoom = -1;
     private ArrayList<MarkerInstance> markers = new ArrayList<MarkerInstance>();
 
 

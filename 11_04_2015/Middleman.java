@@ -31,6 +31,7 @@ public class Middleman {
     public Middleman(Context c, String fileOfQuestions, String fileOfLocations){
         this.c = c;
         //instanciate the model via different files
+        /*PUt this in threads*/
         this.extractQuestions(c, fileOfQuestions);
         this.extractLocations(c, fileOfLocations);
         //instanciate a generic header front
@@ -191,7 +192,9 @@ public class Middleman {
             }
         }
         Log.d("placetest",place_last_true+"");
-        if(this.getModQuestions().get(place_last_true).getPlace().equals(this.getModQuestions().get(place_last_true+1).getPlace()))
+        String a = this.getModQuestions().get(place_last_true).getPlace().toLowerCase();
+        String b = this.getModQuestions().get(place_last_true+1).getPlace().toLowerCase();
+        if(a.equals(b))
         {
             test=false;
             this.mustRefresh=false;
@@ -200,7 +203,7 @@ public class Middleman {
         {
             test=true;
             this.mustRefresh=true;
-            this.NewPlace=this.getModQuestions().get(place_last_true+1).getPlace();
+            this.NewPlace = this.getModQuestions().get(place_last_true+1).getPlace().toLowerCase();
             Log.d("test5",this.NewPlace);
         }
         Log.d("test",""+test);
@@ -215,9 +218,9 @@ public class Middleman {
         {
             Log.d("eng",this.NewPlace);
             Log.d("boucle",this.modMap.get(j).getName());
-            if (this.modMap.get(j).getName().equals(this.NewPlace))
+            if (this.modMap.get(j).getName().toLowerCase().equals(this.NewPlace))
             {
-                l= this.modMap.get(j);
+                l = this.modMap.get(j);
             }
         }
         return l;

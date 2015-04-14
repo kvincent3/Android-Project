@@ -154,7 +154,7 @@ public class ViewUserPanel
             this.modQuestion.get(current).setPassed(true);
             if (this.current+1< this.modQuestion.size())
             {
-                this.refreshPage();
+                this.refreshUser();
                 this.current++;
             }else{
                 Log.d("VIEW", "A court de question : "+this.current+" VS "+this.modQuestion.size());
@@ -172,7 +172,7 @@ public class ViewUserPanel
         return correct;
     }
 
-    public void refreshPage(){
+    public void refreshUser(){
         this.loadTitleQuestion();
         this.loadButton();
         this.loadIndication();

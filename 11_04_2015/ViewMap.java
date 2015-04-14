@@ -52,30 +52,43 @@ public class ViewMap
         }
     }
 
-    public void Refresh()
+    /*
+    Amelioration pour rafraichir au cas par cas, que si la location existe reellement dans notre
+    fichier mapData.txt
+     */
+    public void refreshMap()
     {
         if (map!=null && this.middleman.comparePlaces())
         {
             Location l = this.middleman.getAppropriateLocation();
-            if (l!=null)
+            CameraUpdate center;
+            CameraUpdate zoom;
+            if (l.getGps() != null)
             {
                 map.clear();
-                CameraUpdate center = CameraUpdateFactory.newLatLng(l.getGps());
-                CameraUpdate zoom = CameraUpdateFactory.zoomTo(l.getZoom());
-                map.moveCamera(center);
-                map.animateCamera(zoom);
-                for (int j=0 ; j < l.getMarkers().size(); j++)
-                {
-                    map.addMarker(new MarkerOptions().position(l.getMarkers().get(j).getCoor())
-                            .title(l.getMarkers().get(j).getTitre())
-                            .snippet(l.getMarkers().get(j).getTexte())
-                            .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
+                center = CameraUpdateFactory.newLatLng(l.getGps());
+
+                if(l.getZoom() != -1){
+                    zoom = CameraUpdateFactory.zoomTo(l.getZoom());
+                    map.moveCamera(center);
+                    map.animateCamera(zoom);
+
+                    for (int j=0 ; j < l.getMarkers().size(); j++)
+                    {
+                        map.addMarker(new MarkerOptions().position(l.getMarkers().get(j).getCoor())
+                                .title(l.getMarkers().get(j).getTitre())
+                                .snippet(l.getMarkers().get(j).getTexte())
+                                .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
+                    }
+                    synchronized (this)
+                    {
+                        Log.d("notifie","on notfie");
+                        this.notify();
+                    }
+
                 }
-                synchronized (this)
-                {
-                    Log.d("notifie","on notfie");
-                    this.notify();
-                }
+
+
             }
         }
     }

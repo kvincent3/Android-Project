@@ -23,8 +23,8 @@ public class MiddleView
                 Log.d("Check ", "Checkem");
                 if (viewUserPanel.check_validity())
                 {
-                    viewUserPanel.refreshPage();
-                    viewMap.Refresh();
+                    viewUserPanel.refreshUser();
+                    viewMap.refreshMap();
                 }
             }
         });
