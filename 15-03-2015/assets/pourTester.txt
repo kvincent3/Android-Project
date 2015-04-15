@@ -1,0 +1,27 @@
+id:0
+q:Click on Achille?
+c:15 years
+c:16 years
+c:1
+c:2
+ans:1
+ind:The right answer is 1
+p:lon
+===
+id:1
+q:Question 1?
+r:25 years
+ind:voila mon indication fonctionne bien pour l'id demande c'est a dire l'id 1
+p:lon
+===
+id:2
+q:Question2?
+ind:voici une indication 2
+p:lon
+===
+id:3
+q:Question 3?
+r:25 years
+ind:voici une indication 3
+p:lon
+===
