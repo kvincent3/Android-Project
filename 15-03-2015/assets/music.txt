@@ -1,0 +1,150 @@
+id:0
+q:Who did try to conquer GB ?
+c:Hector
+c:Jules Cesar
+c:Attila
+c:M-N-F
+ans:Jules Cesar
+ind:He succeeded to conquer Gaul
+p:English Channel
+===
+id:1
+q:Who succeeded to conquer GB ?
+c:Jules Cesar
+c:Claude
+c:Roger Moore
+c:Spartacus
+ans:Claude
+ind:He was a Roman emperor
+p:English Channel2
+===
+id:3
+q:When was build Hadrien's wall ?
+c:55 before Christ
+c:122
+c:117
+c:403
+ans:122
+ind:Good luck c(=D
+p:Scotland
+===
+id:4
+q:When did the Viking's rushes begin ?
+c:VIII th century
+c:V th century
+c:VI th century
+c:X th century
+ans:VIII th century
+ind:Charlemagne was born a little bit after
+p:East Cost
+===
+id:5
+q:Who became the first king of England ?
+c:William the conqueror
+c:Mr Bean
+c:Richard coeur de lion
+c:Robin Hood
+ans:William the conqueror
+ind:He conquered it bravely
+p:London
+===
+id:6
+q:Who did participate to the 3rd Croisade ?
+c:William the conqueror
+c:Sean Connery
+c:Richard the Lionheart
+c:Stannis Baratheon
+ans:Richard the Lionheart
+ind:Robin Hood lived during his reign
+p:Britain
+===
+id:7
+q:Who conquered the Wales ?
+c:William the Conqueror
+c:Margaret Thatcher
+c:The Others
+c:Edouard 1st
+ans:Edouard 1st
+ind:Hahaha
+p:Wales
+===
+id:8
+q:When was the Wales conquered ?
+c:X th century
+c:XIII th century
+c:XI th century
+c:XV th century
+ans:XIII th century
+ind:The conqueror was Edouard 1st
+p:Wales
+===
+id:9
+q:When did the Hundread Years War begin ?
+c:1286
+c:1302
+c:1337
+c:1375
+ans:1337
+ind:Not today !
+p:Manche
+===
+id:10
+q:Who were involved in the war of the Roses ?
+c:Yorkists vs Tudors
+c:Scots VS the English
+c:Lancastrians VS Yorkists
+c:Lannisters VS Tyrells
+ans:Lancastrians VS Yorkists
+ind:It was an english civil war
+p:England
+===
+id:11
+q:What was the purpose of the war of the Roses ?
+c:Compete with the shamrock
+c:Find who cuts the White rose off
+c:Know which rose was better
+c:Conquer the throne
+ans:Conquer the throne
+ind:The aim was to get the power
+p:England
+===
+id:12
+q:When did the war of the Roses append ?
+c:XIII th century
+c:XIV th century
+c:XV th century
+c:XVI th century
+ans:XV th century
+ind:It follows the end of the Hundread Years War
+p:England
+===
+id:13
+q:Who did win the war of the Roses ?
+c:Lancastrians
+c:Yorkists
+c:Tudors
+c:Lannisters
+ans:Tudors
+ind:Who do you expect ?
+p:England
+===
+id:14
+q:Who did break with the Catholic Church ?
+c:Charles II
+c:Richard III
+c:Henry VIII
+c:Stannis Baratheon
+ans:Henry VIII
+ind:The higher the better !
+p:London
+===
+id:15
+q:Why did Henry VIII found the Church of England ?
+c:He cuted a white rose off
+c:He divorced
+c:He wanted more power
+c:Winter was comming
+ans:He divorced
+ind:Always issues with girls
+p:London
+===
