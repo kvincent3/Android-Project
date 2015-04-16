@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/blacklon"
+    tools:context=".MainActivity"  >
+
+
+
+    <LinearLayout
+        android:id="@+id/myLinear"
+        android:layout_width="match_parent"
+        android:background="@drawable/effect3d"
+        android:layout_height="52dp" >
+
+        <TextView
+            android:id="@+id/logoTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/timer" />
+
+        <TextView
+            android:id="@+id/delay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="délai"
+            android:paddingLeft="15dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="left" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:text="Question 1"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="pts"
+            android:paddingRight="15dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="right|end"
+            android:gravity="right" />
+
+        <TextView
+            android:id="@+id/logoPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/add" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <!--  class="com.google.android.gms.maps.MapFragment"  -->
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+
+            />
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:drawableLeft="@drawable/uk"
+                    android:drawableRight="@drawable/uk"
+                    android:padding="5dp"
+                    android:background="@drawable/effect3d"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/DarkRed"
+                    android:textAlignment="center"
+                    android:minLines="1"
+                    android:gravity="center" />
+
+
+
+                <FrameLayout
+                    android:id="@+id/myframe"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

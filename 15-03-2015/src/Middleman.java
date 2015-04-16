@@ -26,9 +26,11 @@ public class Middleman {
     private ModelBar modBar;
     private String NewPlace;
     public boolean mustRefresh;
+    private int questionNumber=1;
+    private int maxNumberQuestion=13;//on met 13 question pour l'instant
 
 
-    public Middleman(Context c, String fileOfQuestions, String fileOfLocations){
+	public Middleman(Context c, String fileOfQuestions, String fileOfLocations){
         this.c = c;
         //instanciate the model via different files
         /*PUt this in threads*/
@@ -265,6 +267,7 @@ public class Middleman {
         this.modBar = modBar;
     }
 
+    
     @Override
     public String toString() {
         return "Middleman{"+
@@ -273,4 +276,27 @@ public class Middleman {
                 ", modBar=" + modBar +
                 '}';
     }
+
+
+	public int getQuestionNumber() {
+		return questionNumber;
+	}
+
+
+	public void setQuestionNumber(int questionNumber) {
+		this.questionNumber = questionNumber;
+	}
+    
+
+    public int getMaxNumberQuestion() {
+		return maxNumberQuestion;
+	}
+
+
+	public void setMaxNumberQuestion(int maxNumberQuestion) {
+		this.maxNumberQuestion = maxNumberQuestion;
+	}
+
+
+    
 }

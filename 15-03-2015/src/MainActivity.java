@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
 		ViewMap relativeMap = new ViewMap(this, this.middleman);
 
 		//The header also refers to the same Model : upBar, which only needs to be refreshed from time to time
-		ViewBarTop header = new ViewBarTop(this.view, this, this.middleman.getModBar());
+		ViewBarTop header = new ViewBarTop(this.view, this, this.middleman);
 
 		//The userView refers to a specific question only for now
 		ViewUserPanel userView = new ViewUserPanel(this.view, this, this.middleman.getModQuestions());
