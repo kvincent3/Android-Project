@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewSwitcher1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:layout_weight="0.47">
+
+            <Button
+                android:id="@+id/indication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/customize_button"
+                android:text="indication"
+                android:textColor="@color/WhiteSmoke" />
+
+            <Button
+                android:id="@+id/check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/customize_button"
+                android:text="check"
+                android:textColor="@color/WhiteSmoke" />
+
+        </LinearLayout>
+
+
+        <ViewSwitcher
+            android:id="@+id/viewSwitcherQuizz"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.47">
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:buttonTint="@color/Sienna"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/customize_button"
+                    android:textColor="@color/WhiteSmoke" />
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:buttonTint="@color/Sienna"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/customize_button"
+                    android:textColor="@color/WhiteSmoke" />
+
+                <RadioButton
+                    android:id="@+id/radio2"
+                    android:buttonTint="@color/Sienna"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/customize_button"
+                    android:textColor="@color/WhiteSmoke" />
+
+                <RadioButton
+                    android:id="@+id/radio3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/Sienna"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/customize_button"
+                    android:textColor="@color/WhiteSmoke" />
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/effect3d"
+                android:src="@drawable/ic_launcher_big" />
+
+
+
+        </ViewSwitcher>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/MyindicationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_margin="25dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/customize_button"
+            android:text="Indication"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="center"
+            android:textColor="@color/WhiteSmoke"
+            android:elegantTextHeight="false"
+            android:gravity="center"
+            android:minLines="1"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/quizz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/customize_button"
+            android:textColor="@color/WhiteSmoke"
+            android:text="Back"
+            android:layout_gravity="center"
+            android:layout_margin="25dp" />
+
+    </LinearLayout>
+
+
+</ViewSwitcher>
