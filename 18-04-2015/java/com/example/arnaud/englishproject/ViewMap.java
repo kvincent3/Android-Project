@@ -32,7 +32,7 @@ public class ViewMap
     {
 
         this.map = ((MapFragment) a.getFragmentManager().findFragmentById(R.id.map) ).getMap();
-        this.map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        this.map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         this.toTouch = toTouch;
 

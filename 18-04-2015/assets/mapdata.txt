@@ -1,21 +1,35 @@
 p:London
-z:11
-c:51.5085300,-0.1257400
-===
-p:English Channel
-m:51.504522,-0.171704,memorial,the monument of princess diana,princ.png
-m:51.502599,-0.149388,achille,the statue of achille,ach.png
-z:12
-c:51.5085300,-0.1257400
-===
-p:Scotland
-m:51.502599,-0.149388,achille,the statue of achille,ach.png
-z:12
+z:13
 c:51.5085300,-0.1257400
 ===
 p:England
+z:5
+c:53.750079, -4.143784
+===
+p:English Channel
+z:6
+c:50.994471, 1.349380
+===
+p:Wales
+z:6
+c:52.336753, -3.308823
+===
+p:Hadrian Wall
+z:6
+c:55.095411, -2.396958
+===
+p:East Cost
+z:6
+c:52.657798, 1.261490
+===
+p:Marquerzjesqlknfe
 m:51.504522,-0.171704,memorial,the monument of princess diana,princ.png
 m:51.502599,-0.149388,achille,the statue of achille,ach.png
 z:12
 c:51.5085300,-0.1257400
 ===
+
+remarques generales,
+zoom de 13 bien pour les villes
+zoom de 6 pour le britishChannel excellent !
+zoom de beaucoup moins pour les pays

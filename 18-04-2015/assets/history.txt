@@ -9,14 +9,14 @@ ind:He succeeded to conquer Gaul
 p:English Channel
 ===
 id:1
-q:Who succeeded to conquer GB ?
+q:Who succeeded to conquer England ?
 c:Jules Cesar
 c:Claude
 c:Roger Moore
 c:Spartacus
 ans:Claude
 ind:He was a Roman emperor
-p:English Channel2
+p:England
 ===
 id:3
 q:When was build Hadrien's wall ?
@@ -26,7 +26,7 @@ c:117
 c:403
 ans:122
 ind:Good luck c(=D
-p:Scotland
+p:Hadrian Wall
 ===
 id:4
 q:When did the Viking's rushes begin ?
@@ -56,7 +56,7 @@ c:Richard the Lionheart
 c:Stannis Baratheon
 ans:Richard the Lionheart
 ind:Robin Hood lived during his reign
-p:Britain
+p:England
 ===
 id:7
 q:Who conquered the Wales ?
@@ -86,7 +86,7 @@ c:1337
 c:1375
 ans:1337
 ind:Not today !
-p:Manche
+p:English Channel
 ===
 id:10
 q:Who were involved in the war of the Roses ?

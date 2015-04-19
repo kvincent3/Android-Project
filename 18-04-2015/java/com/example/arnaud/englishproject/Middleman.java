@@ -166,17 +166,13 @@ public class Middleman {
         return null;
     }
 
-    //si pas les mêmes renvoie true si non false
+    //actualise la valeur de this.mustRefresh
+    //renvoit this.mustRefresh
+    //Donc si renvoit true, on doit rafraichir
     public boolean comparePlaces()
     {
         int place_last_true=0;
-        boolean test=false;
-        //Log.d("test5","on compare");
-        /*
-        for (int i=0;i<this.getModQuestions().size();i++){
-            Log.d("placetest"+i,this.getModQuestions().get(i).getPassed()+"");
-        }
-        */
+
         int i=0;
         while(i<this.getModQuestions().size()){
             if (this.getModQuestions().get(i).getPassed())
@@ -189,30 +185,28 @@ public class Middleman {
         Log.d("placetest",place_last_true+"");
         String a = this.getModQuestions().get(place_last_true).getPlace().toLowerCase();
 
-
-
         //Surveiller la valeur de place_last_true+1
         String b;
-        if (i < this.getModQuestions().size()){
+        if (place_last_true + 1 < this.getModQuestions().size()){
             b = this.getModQuestions().get(place_last_true+1).getPlace().toLowerCase();
         }else{
-            b = a;
+            //On met b a la meme valeur que a
+            b = this.getModQuestions().get(place_last_true).getPlace().toLowerCase();;
         }
 
         if(a.equals(b))
         {
-            test=false;
             this.mustRefresh=false;
+            Log.d("CmpPlace", "place identiques");
         }
         else
         {
-            test=true;
             this.mustRefresh=true;
             this.newPlace = this.getModQuestions().get(place_last_true+1).getPlace().toLowerCase();
-            Log.d("test5",this.newPlace);
+            Log.d("CmpPlace", "place differente --> "+this.newPlace);
         }
-        Log.d("test",""+test);
-        return test;
+        Log.d("CmpPlace","return : " + this.mustRefresh);
+        return this.mustRefresh;
 
     }
 

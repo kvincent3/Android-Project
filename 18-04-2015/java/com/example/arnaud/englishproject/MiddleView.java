@@ -20,7 +20,7 @@ public class MiddleView
 	private Button check;
     private Middleman model;
     private int currentQuestion;
-    private Boolean toTouch, end, refreshMap;
+    private Boolean end, refreshMap;
 
 	public MiddleView (Activity a, View mainView, final Middleman model, boolean toTouch){
 
@@ -28,7 +28,6 @@ public class MiddleView
         this.model = model;
         this.currentQuestion = 0;
         this.refreshMap = true;
-        this.toTouch = toTouch;
         this.end = false;
 
 		this.viewUserPanel = new ViewUserPanel(mainView, a, model.giveMeQuestion(currentQuestion), toTouch);
@@ -46,8 +45,7 @@ public class MiddleView
                 Log.d("Check ", "Checkem");
 
                 if ( (viewMap.getToTouch() && viewMap.checkAccurancy(model.giveMeQuestion(currentQuestion).getCorrect()) )
-                        || (viewUserPanel.check_validity(model.giveMeQuestion(currentQuestion))) )
-                {
+                        || (viewUserPanel.check_validity(model.giveMeQuestion(currentQuestion))) ) {
                     displayStatus(true);
                     updateModel();
 
@@ -56,7 +54,7 @@ public class MiddleView
 
                         viewUserPanel.refreshUser(model.giveMeQuestion(currentQuestion));
 
-                        if (refreshMap){
+                        if (refreshMap) {
                             String place = model.giveMeQuestion(currentQuestion).getPlace();
                             viewMap.refreshMap(model.getLocationFromPlace(place));
                         }
@@ -67,19 +65,14 @@ public class MiddleView
                         //Log.d("VIEW", "A court de question : " + currentQuestion + " VS " + model.getModQuestions().size());
                         Log.d("END", "redirection");
                         end = true;
-
-                        viewUserPanel = null;
-                        viewMap = null;
-
                     }
-
-
-
-                    synchronized (this){
+                    synchronized (this) {
 
                         this.notifyAll();
                     }
-
+                }else if (!viewBarTop.isGoOn()){
+                    Log.d("END", "timer is dead");
+                    end = true;
                 }else{
                     displayStatus(false);
                     viewBarTop.refresh(false);
@@ -99,7 +92,10 @@ public class MiddleView
         this.model.giveMeQuestion(this.currentQuestion).setPassed(true);
 
         //2:update Map
-        this.refreshMap = this.model.comparePlaces();
+        //Refreshed if newMap, or the current question was to find a specific place
+        //--> the user should have move the map
+        Boolean haveFound = this.model.giveMeQuestion(this.currentQuestion).getChoices().size() == 0;
+        this.refreshMap = this.model.comparePlaces() || haveFound;
     }
 
     public void displayStatus(boolean status){
