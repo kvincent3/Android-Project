@@ -27,6 +27,7 @@ public class MiddleView
         this.context = a;
         this.model = model;
         this.currentQuestion = 0;
+
         this.refreshMap = true;
         this.end = false;
 
@@ -49,7 +50,7 @@ public class MiddleView
                     displayStatus(true);
                     updateModel();
 
-                    if (currentQuestion + 1 < model.getModQuestions().size()) {
+                    if (currentQuestion + 1 < model.getModQuestions().size() && currentQuestion + 1 <= model.getMaxNumberQuestion()) {
                         currentQuestion++;
 
                         viewUserPanel.refreshUser(model.giveMeQuestion(currentQuestion));
@@ -77,6 +78,14 @@ public class MiddleView
                     displayStatus(false);
                     viewBarTop.refresh(false);
                 }
+
+                if (end){
+                    Intent intent = new Intent(context, End.class);
+                    intent.putExtra("point",""+viewBarTop.getModel().getPoints());
+                    context.startActivity(intent);
+                    ((Activity) context).finish();
+                }
+
             }
         });
 	}

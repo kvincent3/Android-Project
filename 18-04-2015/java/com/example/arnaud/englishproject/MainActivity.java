@@ -42,6 +42,9 @@ public class MainActivity extends Activity {
         }
 
         //this.middleman = new Middleman(this, "touch.txt", "mapdata.txt");
+        this.middleman.setMaxNumberQuestion(10);
+
+
 
         //nb : toTouch = true si on appel un fichier de quizz et de map
         MiddleView midView = new MiddleView(this, this.view, this.middleman, toTouch);
