@@ -1,15 +1,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/londonpic" >
+    android:background="@drawable/londonpic"
+    android:padding="5dp">
 
     <FrameLayout
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="110dp"
-        android:background="@drawable/rectangle" >
+        android:layout_marginTop="150dp"
+        android:background="@drawable/rectangle"
+        android:id="@+id/frameLayout">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -33,11 +35,38 @@
             android:id="@+id/again"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="85dp"
+            android:layout_marginRight="35dp"
             android:background="@drawable/round_button"
-            android:text="Try again"
-            android:textColor="@color/WhiteSmoke" />
+            android:text="Try again ?"
+            android:textColor="@color/WhiteSmoke"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/bestScore"
+            android:layout_toRightOf="@+id/bestScore" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/round_button"
+            android:text="Save score !"
+            android:textColor="@color/WhiteSmoke"
+            android:layout_alignTop="@+id/again"
+            android:layout_toStartOf="@+id/bestScore"
+            android:layout_toLeftOf="@+id/bestScore" />
+
+        <TextView
+            android:id="@+id/bestScore"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:text="Best Score :"
+            android:textColor="@color/WhiteSmoke"
+            android:background="@drawable/rectangle"
+            android:gravity="center_vertical|center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_below="@+id/frameLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_above="@+id/save" />
 
 </RelativeLayout>

@@ -30,4 +30,10 @@ ans:Edouard 1st
 ind:Hahaha
 p:Wales
 ===
+id:6
+q:Where is the memorial of Lady Diana ?
+ans:51.504522,-0.171704
+ind:It's in a park
+p:London
+===
 

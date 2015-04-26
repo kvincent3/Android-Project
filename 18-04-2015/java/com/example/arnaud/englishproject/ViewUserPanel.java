@@ -125,8 +125,7 @@ public class ViewUserPanel
     public void loadButton(Question q){
         for(int i=0 ; i<q.getChoices().size();i++)
         {
-            radioButtonlist.get(i).setSelected(false);
-            radioButtonlist.get(i).setChecked(false);
+
             radioButtonlist.get(i).setText(q.getChoices().get(i));
         }
         if (!this.setOnQuizz){

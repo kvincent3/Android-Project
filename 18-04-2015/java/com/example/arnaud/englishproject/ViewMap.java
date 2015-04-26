@@ -8,14 +8,12 @@ import android.util.Log;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import java.text.DecimalFormat;
-
 import static java.lang.StrictMath.abs;
 
 
@@ -32,7 +30,7 @@ public class ViewMap
     {
 
         this.map = ((MapFragment) a.getFragmentManager().findFragmentById(R.id.map) ).getMap();
-        this.map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
 
         this.toTouch = toTouch;
 
@@ -50,9 +48,9 @@ public class ViewMap
                     map.clear();
                     map.addMarker(new MarkerOptions().position(spot.getCoor()));
 
-
                 }
             });
+
         }
     }
 
@@ -66,6 +64,13 @@ public class ViewMap
             //Ajout d'une valeur par défaut du zoom (vue de l'angleterre ?)
             CameraUpdate center = CameraUpdateFactory.newLatLng(l.getGps());
             CameraUpdate zoom = CameraUpdateFactory.zoomTo(l.getZoom());
+
+            if(l.getZoom() < 10){
+                this.map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            }else{
+                this.map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            }
+
             map.moveCamera(center);
             map.animateCamera(zoom);
 
@@ -75,6 +80,14 @@ public class ViewMap
                         .title(l.getMarkers().get(j).getTitre())
                         .snippet(l.getMarkers().get(j).getTexte())
                         .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
+                map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(Marker marker) {
+                        touched = marker.getPosition();
+                        Log.d("MARKER", "internal variable has been intialized");
+                        return true;
+                    }
+                });
             }
         }
 
@@ -97,6 +110,13 @@ public class ViewMap
 
                 if(l.getZoom() != -1){
                     zoom = CameraUpdateFactory.zoomTo(l.getZoom());
+
+                    if(l.getZoom() < 10){
+                        this.map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                    }else{
+                        this.map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                    }
+
                     map.moveCamera(center);
                     map.animateCamera(zoom);
 
@@ -106,6 +126,15 @@ public class ViewMap
                                 .title(l.getMarkers().get(j).getTitre())
                                 .snippet(l.getMarkers().get(j).getTexte())
                                 .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
+
+                        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                            @Override
+                            public boolean onMarkerClick(Marker marker) {
+                                touched = marker.getPosition();
+                                Log.d("MARKER", "internal variable has been intialized");
+                                return true;
+                            }
+                        });
                     }
 
 
@@ -121,15 +150,23 @@ public class ViewMap
     }
 
     public boolean checkAccurancy(String answer) {
+
+
         boolean found = false;
 
         /*
         Convert the given String to a new LAtLng variable
+
          */
         String[] toConvert = answer.split(", ");
         if(toConvert.length != 2){
-            Log.d("convert", "cannot split into 2 pieces the given answer");
-            return found;
+            toConvert = answer.split(",");
+            if(toConvert.length != 2){
+                Log.d("convert", "cannot split into 2 pieces the given answer");
+                return found;
+            }
+            Log.d("convert", "avoid a segfault on the split of the given answer");
+
         }
 
         LatLng l = new LatLng( formatConversion(Double.parseDouble(toConvert[0])),

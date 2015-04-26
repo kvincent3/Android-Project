@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 
         Boolean toTouch = false;
         //Set up the model appropriate to the specific typesend by home.java
-
+        /*
         if (subject.equals("history"))
         {
             this.middleman = new Middleman(this, "history.txt", "mapdata.txt");
@@ -40,14 +40,15 @@ public class MainActivity extends Activity {
         {
             this.middleman = new Middleman(this, "music.txt", "mapdata.txt");
         }
+    */
 
-        //this.middleman = new Middleman(this, "touch.txt", "mapdata.txt");
-        this.middleman.setMaxNumberQuestion(10);
+        this.middleman = new Middleman(this, "touch.txt", "mapdata.txt");
+        this.middleman.setMaxNumberQuestion(5);
 
 
 
         //nb : toTouch = true si on appel un fichier de quizz et de map
-        MiddleView midView = new MiddleView(this, this.view, this.middleman, toTouch);
+        MiddleView midView = new MiddleView(this, this.view, this.middleman, true);
 
 
     }

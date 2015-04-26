@@ -50,7 +50,7 @@ public class MiddleView
                     displayStatus(true);
                     updateModel();
 
-                    if (currentQuestion + 1 < model.getModQuestions().size() && currentQuestion + 1 <= model.getMaxNumberQuestion()) {
+                    if (currentQuestion + 1 < model.getModQuestions().size() && currentQuestion + 1 < model.getMaxNumberQuestion()) {
                         currentQuestion++;
 
                         viewUserPanel.refreshUser(model.giveMeQuestion(currentQuestion));
@@ -72,7 +72,8 @@ public class MiddleView
                         this.notifyAll();
                     }
                 }else if (!viewBarTop.isGoOn()){
-                    Log.d("END", "timer is dead");
+                    Log.d("END", "timer is dead --> End of the game");
+
                     end = true;
                 }else{
                     displayStatus(false);
@@ -85,6 +86,7 @@ public class MiddleView
                     context.startActivity(intent);
                     ((Activity) context).finish();
                 }
+
 
             }
         });
