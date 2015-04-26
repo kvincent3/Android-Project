@@ -76,16 +76,19 @@ public class ViewMap
 
             for (int j=0 ; j < l.getMarkers().size(); j++)
             {
-                map.addMarker(new MarkerOptions().position(l.getMarkers().get(j).getCoor())
+
+                MarkerOptions tmp = new MarkerOptions().position(l.getMarkers().get(j).getCoor())
                         .title(l.getMarkers().get(j).getTitre())
                         .snippet(l.getMarkers().get(j).getTexte())
-                        .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
+                        .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage()));
+                map.addMarker(tmp);
                 map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                     @Override
                     public boolean onMarkerClick(Marker marker) {
                         touched = marker.getPosition();
+
                         Log.d("MARKER", "internal variable has been intialized");
-                        return true;
+                        return false; //Conserver le comportement normal
                     }
                 });
             }
@@ -122,17 +125,18 @@ public class ViewMap
 
                     for (int j=0 ; j < l.getMarkers().size(); j++)
                     {
-                        map.addMarker(new MarkerOptions().position(l.getMarkers().get(j).getCoor())
+                        MarkerOptions tmp = new MarkerOptions().position(l.getMarkers().get(j).getCoor())
                                 .title(l.getMarkers().get(j).getTitre())
                                 .snippet(l.getMarkers().get(j).getTexte())
-                                .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage())));
-
+                                .icon(BitmapDescriptorFactory.fromAsset(l.getMarkers().get(j).getImage()));
+                        map.addMarker(tmp);
                         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                             @Override
                             public boolean onMarkerClick(Marker marker) {
                                 touched = marker.getPosition();
+
                                 Log.d("MARKER", "internal variable has been intialized");
-                                return true;
+                                return false; //Conserver le comportement normal
                             }
                         });
                     }
