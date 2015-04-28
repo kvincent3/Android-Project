@@ -1,4 +1,4 @@
-package com.example.arnaud.englishproject;
+package com.example.englishproject;
 
 
 
@@ -38,8 +38,7 @@ public class Home extends Activity implements android.view.View.OnClickListener
                 startActivity(intent);
                 break;
             case R.id.history :
-                Intent intent2 = new Intent(Home.this, Subject.class);
-                intent2.putExtra("type","history");
+                Intent intent2 = new Intent(Home.this, History.class);
                 startActivity(intent2);
                 break;
 

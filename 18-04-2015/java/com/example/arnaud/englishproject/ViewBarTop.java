@@ -1,4 +1,4 @@
-package com.example.arnaud.englishproject;
+package com.example.englishproject;
 
 import android.app.Activity;
 import android.content.Context;

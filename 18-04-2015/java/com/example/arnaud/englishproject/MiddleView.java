@@ -1,4 +1,4 @@
-package com.example.arnaud.englishproject;
+package com.example.englishproject;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 public class MiddleView 
 {
-    private Context context;
+    private Activity context;
 	private ViewUserPanel viewUserPanel;
 	private ViewMap viewMap;
     private ViewBarTop viewBarTop;
@@ -90,6 +90,14 @@ public class MiddleView
 
             }
         });
+	}
+	
+	public MiddleView (Activity a,Middleman m)
+	{
+		this.context =a;
+		this.viewMap = new ViewMap(this.context);
+		Log.d("test2","ouaiii");
+		this.viewMap.LoadHistoryMap(m.getModHistory()); 
 	}
 
 

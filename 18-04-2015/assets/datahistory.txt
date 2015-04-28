@@ -1,0 +1,6 @@
+m:51.5085300,-0.1257400,memorial,the monument of diana,ach.png
+h:on est dans le 1
+===
+m:55.5085300,-7.1257400,memorial,the monument of princess diana,princ.png
+h:on est dans le 2
+===

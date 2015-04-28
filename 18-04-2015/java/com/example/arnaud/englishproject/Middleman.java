@@ -1,4 +1,4 @@
-package com.example.arnaud.englishproject;
+package com.example.englishproject;
 
 import android.content.Context;
 
@@ -26,12 +26,12 @@ public class Middleman {
     //MODELS
     private ArrayList<Question> modQuestions = new ArrayList<Question>();
     private ArrayList<Location> modMap = new ArrayList<Location>();
-    private ModelBar modBar;
+    private ArrayList<DataHistory> modHistory= new ArrayList<DataHistory>();
+	private ModelBar modBar;
     private String newPlace;
     public boolean mustRefresh;
     private int questionNumber=1;
     private int maxNumberQuestion=13;//on met 13 question pour l'instant
-
 
 
 
@@ -43,9 +43,57 @@ public class Middleman {
         //instanciate a generic header front
         this.modBar = new ModelBar(30, "QUIZZ", 0);
     }
+    
+    public Middleman(Context c, String fileHistory){
+        this.c = c;
+        this.extractHistory(c, fileHistory);
+    }
 
 
-    /*
+    private void extractHistory(Context c2, String fileHistory)
+    {
+        InputStream in;
+        BufferedReader br = null;
+        try{
+            in = c.getAssets().open(fileHistory);
+            br = new BufferedReader(new InputStreamReader(in));
+            String line;
+            DataHistory q = new DataHistory();
+            while ((line = br.readLine()) != null){
+
+                String[] parts=line.split(":");
+                if (parts[0].equals("m")) {
+                    q.getLocation().addMarkers(new MarkerInstance(parts[1]));
+                }
+                else if (parts[0].equals("h"))
+                {
+                	q.setStory(parts[1]);
+                }
+                if (line.equals("===")){
+                    this.modHistory.add(q);
+                    q = null;
+                    q = new DataHistory();
+                }
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            try {
+                if (br != null)br.close();
+                //Randomize the arrayList
+                long seed = System.nanoTime();
+                Collections.shuffle(this.modQuestions, new Random(seed));
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+
+
+            }
+        }
+		
+	}
+
+	/*
     Extract questions
      */
     public void extractQuestions(Context c, String fileOfQuestions){
@@ -296,6 +344,14 @@ public class Middleman {
                 ", modBar=" + modBar +
                 '}';
     }
+
+    public ArrayList<DataHistory> getModHistory() {
+		return modHistory;
+	}
+
+	public void setModHistory(ArrayList<DataHistory> modHistory) {
+		this.modHistory = modHistory;
+	}
 
 
 
