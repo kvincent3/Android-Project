@@ -1,0 +1,71 @@
+id:0
+q:Where is the Westminster Column ?
+ans:51.499506, -0.129150
+ind:It's in front of Westminster Abbey
+p:London
+===
+id:12
+q:When did the war of the Roses append ?
+c:XIII th century
+c:XIV th century
+c:XV th century
+c:XVI th century
+ans:XV th century
+ind:It follows the end of the Hundread Years War
+p:England
+===
+id:2
+q:Where is the WestMinster Abbey ?
+ans:51.499240, -0.127555
+ind:It's near the Palace of Westminster
+p:London
+===
+id:7
+q:Who conquered the Wales ?
+c:William the Conqueror
+c:Margaret Thatcher
+c:The Others
+c:Edouard 1st
+ans:Edouard 1st
+ind:Hahaha
+p:Wales
+===
+id:6
+q:Where is the memorial of Lady Diana ?
+ans:51.504522,-0.171704
+ind:It's in a park
+p:London
+===
+
+
+
+===
+m:51.499506,-0.129150,Column,the column of westminster,column.jpg
+h:
+===
+m:51.508109,-0.075928,TowerofLondon,the tower of London,londonTower.jpg
+h:
+===
+m:51.499240,-0.127555,Abbey,the Westminster Abbey,abbey.jpg
+h:
+===
+m:51.503480,-0.126128,WhiteHall,the WhiteHall,whitehall.jpg
+h:
+===
+m:51.500859,-0.124593,BigBen,BigBen,bigben.jpg
+h:
+===
+m:51.507929,-0.128155,Trafalgar, Trafalgar Square,trafalgar.jpg
+h:
+===
+m:51.503324,-0.119543,LondonEye, the London Eye,londonEye.jpg
+h:
+===
+m:51.501364,-0.14189,Buckingham, the Buckingham palace,buckingham.jpg
+h:
+===
+m:51.519413,-0.126957,Museum, the British museum,BritishMuseum.jpg
+h:
+===
+m:51.476853,-0.0005,Observatory, the Greenwich Royal observatory,Greenwich.jpg
+h:

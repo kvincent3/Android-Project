@@ -1,0 +1,60 @@
+q:Where is the Westminster Column ?
+ans:51.499506, -0.129150
+ind:It's in front of Westminster Abbey
+p:London
+===
+q:Where is the Tower of London?
+ans:51.508109, -0.075928
+ind:It's just after the City, when you get out of London via the Thames
+p:London
+===
+q:Where is the WestMinster Abbey ?
+ans:51.499240, -0.127555
+ind:It's near the Palace of Westminster
+p:London
+===
+q:Where is the WhiteHall ?
+ind:It's to the north of Westminster
+ans:51.503480, -0.126128
+p:London
+===
+q:Where is BigBen ?
+ind:It's on the Thames, in Westminster
+ans:51.500859, -0.124593
+p:London
+===
+q:Where is Trafalgar Square ?
+ans:51.507929, -0.128155
+ind:It's a huge crossroads to the north of Westminster
+p:London
+===
+q:Where is the memorial of Lady Diana ?
+ans:51.504522, -0.171704
+ind:It's in a park
+p:London
+===
+q:Where is the london eye ?
+ans:51.503324,-0.119543
+ind:It's ont the Thames, not far of Westminster
+p:London
+===
+q:Where is the Buckingham palace ?
+ans:51.501364,-0.14189
+ind:It's to the West of WestMinster, near the memorial of Lady Diana
+p:London
+===
+q:Where is the British Museum ?
+ans:51.519413,-0.126957
+ind:It's to the north of Trafalgar Square
+p:London
+===
+q:Where is the Greenwich royal observatory ?
+ans:51.476853,-0.0005
+ind:It's far to the East of the Tower of London, when you follow the Thames
+p:London
+===
+q:Where is the Tower Bridge ?
+ans:51.507879, -0.087904
+ind:It's near the Tower of London
+p:London
+===

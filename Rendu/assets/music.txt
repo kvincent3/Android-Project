@@ -1,0 +1,108 @@
+q:From where come the Beattles ?
+c:London
+c:Manchester
+c:Dublin
+c:Liverpool
+ans:Liverpool
+ind:It's to the north of Wales
+p:England
+===
+q:Who sings 'yellow submarine' ?
+c:The cure
+c:Amy Winehouse
+c:Sex pistol
+c:The beattles
+ans:The beattles
+ind:Jonh Lenon was a member of this band
+p:Wales
+===
+q:What was the musical style of The Beattles ?
+c:Reggae
+c:Metal
+c:Post rock
+c:Pop Rock
+ans:Pop rock
+ind:The band was an ambassador of a famous style
+p:Wales
+===
+q:How many tracks had produced the Beattles ?
+c:174
+c:more than 200
+c:187
+c:153
+ans:more than 200
+ind:This band has really been very creative
+p:Wales
+===
+q:Where is born Amy Winehouse ?
+c:Manchester
+c:London
+c:Nottingham
+c:Southampton
+ans:London
+ind:She is born in tha capital
+p:England
+===
+q:What kind of music had sung Amy Winehouse ?
+c:Jazz
+c:Rock
+c:Opera
+c:Metal
+ans:Jazz
+ind:American black community has created this style of music
+p:London
+===
+q:What music had not sung Amy Winehouse ?
+c:Stronger than me
+c:Tears flow on their own
+c:Rehab
+c:Love is a losing game
+ans:Tears flow on their own
+ind:It's not a common thing to be sad
+p:London
+===
+q:What has caused the death of Amy Winehouse ?
+c:Natural death
+c:Drug overdose
+c:Her heart has been brocken
+c:Alcohol overdose
+ans:Alcohol overdose
+ind:Even it's legal to buy it, don't abuse of it
+p:London
+===
+q:When was founded the Pink Floyd ?
+c:1963
+c:1967
+c:1965
+c:1969
+ans:1965
+ind:During this year, johny Hallyday got married
+p:London
+===
+q:What is the musical style of Pink Floyd ?
+c:Pop Rock
+c:Blues
+c:Electronic Dub
+c:Progressive and psychedelic
+ans:Progressive and psychedelic
+ind:The originality of their musical style was acclaimed worldwide
+p:London
+===
+q:What is the name of the Pink Floyd's album, which is the soundtrack of a movie ?
+c:The Wall
+c:Dark Side of The Moon
+c:Animals
+c:The Final Cut
+ans:The Wall
+ind:Jonh Snow protect it
+p:London
+===
+q:When was perform the last show of Pink Floyd ?
+c:1993
+c:1998
+c:2005
+c:2007
+ans:2005
+ind:Marty Mac Fly comes 10 years after this show
+p:London
+===

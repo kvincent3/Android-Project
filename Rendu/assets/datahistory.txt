@@ -1,0 +1,57 @@
+m:51.502599,-0.149388,achille,the statue of achille,ach.png
+h:The 18ft statue of Achilles, the Greek hero of the Trojan War, commemorates the soldier and politician, Arthur Wellesley, 1st Duke of Wellington (1769-1852).
+h:It was installed by order of King George III and unveiled on 18 June 1822.
+h:Located near the Queen Elizabeth Gate at Hyde Park Corner, the statue of Achilles was the first statue installed in Hyde Park and was commissioned by a patriotic, upper class society, known as Ladies of England.
+h:The statue was made by Sir Richard Westmacott using 33 tonnes of bronze from canons captured in Wellington's campaigns in France.
+h:The body of the statue is modelled on a Roman figure on Monte Cavallo in Italy. The head is the based on the Duke himself.
+h:The statue was originally completely nude and caused outrage so a small fig leaf had to be added soon after it was installed.
+===
+m:51.504522,-0.171704,memorial,the monument of princess diana,princ.png
+h:It is a memorial in London dedicated to Diana, Princess of Wales, who died in a car crash in 1997.
+h:It was designed to express Diana's spirit and love of children.
+h:The fountain is located in the southwest corner of Hyde Park.
+===
+m:51.507879,-0.087904,Bridge, the Tower Bridge,towerBridge.jpg
+h:Tower Bridge (built 1886–1894) is a combined bascule and suspension bridge in London, England which crosses the River Thames.
+h:It has been build to increase the commercial development in the East end of London.
+h:Indeed, it's specific architecture avoids to cut off access by tall-masted ships to the port facilities.
+===
+m:51.499506,-0.129150,Column,the column of westminster,column.jpg
+h:This statue presents a statue of St George and Dragon.
+h:This column is a memorial to the victims of the Crimean War.
+===
+m:51.508109,-0.075928,TowerofLondon,the tower of London,londonTower.jpg
+h:It was founded towards the end of 1066 as part of the Norman Conquest of England.
+h: The White Tower, which gives the entire castle its name, was built by William the Conqueror in 1078, and was a resented symbol of oppression, inflicted upon London by the new ruling elite. The castle was used as a prison from 1100 until 1952, although that was not its primary purpose -a royal palace.
+h:This was a powerful and trusted position in the medieval period.
+h:Many figures who had fallen into disgrace, such as Elizabeth I before she became queen, were held within its walls.
+===
+m:51.499240,-0.127555,Abbey,the Westminster Abbey,abbey.jpg
+h:Westminster Abbey, is also formally titled the Collegiate Church of St Peter.
+h:It has been the traditional place of coronation and burial site for English and, later, British monarchs.
+===
+m:51.503480,-0.126128,WhiteHall,the WhiteHall,whitehall.jpg
+h:The Whitehall is recognised as the centre of Her Majesty's Government, the street is lined with government departments and ministries.
+===
+m:51.500859,-0.124593,BigBen,BigBen,bigben.jpg
+h:This 13.5 tons bell is located in the Elizabeth Tower, of the Westminster palace, which is the main place of the english parliament.
+===
+m:51.507929,-0.128155,Trafalgar, Trafalgar Square,trafalgar.jpg
+h:This is a famous place of Westminster, which commemorates the Trafalgar Battle.
+h:This battle opposed the french and spanish fleets to the english one.
+h:Nowadays, it is a well-known social place.
+===
+m:51.503324,-0.119543,LondonEye, the London Eye,londonEye.jpg
+h:It has been set up for the 2000 Year.
+h:It's nickname is the Millenium Wheel
+===
+m:51.501364,-0.14189,Buckingham, the Buckingham palace,buckingham.jpg
+h:It is the official place of the english monarchs.
+h:It has been rebuild many time since it's creation, inthe XVIIIth century
+===
+m:51.519413,-0.126957,Museum, the British museum,BritishMuseum.jpg
+h:Founded in 1753, the british museum is the most famous museum of the united kingdom.
+===
+m:51.476853,-0.0005,Observatory, the Greenwich Royal observatory,Greenwich.jpg
+h:The greenwich royal observatory is a famous astronomical observatory.
+h:Build under the demand of Charles II in 1675, it's main mission was to determine better longitudes, to improve navigation.

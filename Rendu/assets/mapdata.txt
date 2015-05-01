@@ -1,0 +1,38 @@
+p:London
+z:12
+m:51.502599,-0.149388,achille,the statue of achille,ach.png
+m:51.504522,-0.171704,memorial,the monument of princess diana,princ.png
+m:51.499506,-0.129150,Column,the column of westminster,column.jpg
+m:51.508109,-0.075928,TowerofLondon,the tower of London,londonTower.jpg
+m:51.499240,-0.127555,Abbey,the Westminster Abbey,abbey.jpg
+m:51.503480,-0.126128,WhiteHall,the WhiteHall,whitehall.jpg
+m:51.500859,-0.124593,BigBen,BigBen,bigben.jpg
+m:51.507929,-0.128155,Trafalgar, Trafalgar Square,trafalgar.jpg
+m:51.503324,-0.119543,LondonEye, the London Eye,londonEye.jpg
+m:51.501364,-0.14189,Buckingham, the Buckingham palace,buckingham.jpg
+m:51.519413,-0.126957,Museum, the British museum,BritishMuseum.jpg
+m:51.476853,-0.0005,Observatory, the Greenwich Royal observatory,Greenwich.jpg
+m:51.507879,-0.087904,Bridge, the Tower Bridge,towerBridge.jpg
+c:51.5085300,-0.1257400
+===
+p:England
+z:5
+c:53.750079, -4.143784
+===
+p:English Channel
+z:6
+c:50.994471, 1.349380
+===
+p:Wales
+z:6
+c:52.336753, -3.308823
+===
+p:Hadrian Wall
+z:6
+c:55.095411, -2.396958
+===
+p:East Cost
+z:6
+c:52.657798, 1.261490
+===
+
